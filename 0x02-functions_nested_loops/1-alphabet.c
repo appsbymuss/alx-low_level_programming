@@ -9,7 +9,12 @@
  */
 void print_alphabet(void)
 {
-	for (char c = 97; c <= 122; c++)
+	char c = 97;
+
+	while (c <= 122)
+	{
 		_putchar(c);
+		c++;
+	}
 	_putchar('\n');
 }
