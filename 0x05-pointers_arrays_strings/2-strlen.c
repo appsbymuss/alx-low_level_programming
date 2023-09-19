@@ -3,9 +3,9 @@
  *_strlen - the length of a string
  *
  *Owned by muss
- *
- *return: int 
- * */
+ *@s: input pointer int
+ *Return: count varible int
+ */
 int _strlen(char *s)
 {
 int count = 0;
