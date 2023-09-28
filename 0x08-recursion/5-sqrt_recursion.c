@@ -1,34 +1,32 @@
 #include "main.h"
+
+int ntr_sqrt_recursion(int n, int i);
+
 /**
- * _sqrt_recursion - the natural square root of a number.
- * @n: the number
- * Return: the natural square root of n
- * On error, -1 is returned.
+ * _sqrt_recursion - returns the natural square of a number
+ * @n: number to calculate the square
+ *
+ * Return: the resulting square root
  */
 int _sqrt_recursion(int n)
 {
-	return (muss_in_house(n, 0));
+	if (n < 0)
+		return (-1);
+	return (ntr_sqrt_recursion(n, 0));
 }
 
 /**
- * muss_in_house - function added
- * @n: the number
- * @s: root
- * Return: the natural square root of n
- * On error, -1 is returned.
+ * ntr_sqrt_recursion - recurses to find the natural sqrt
+ * @n: number to calculate the sqaure
+ * @i: iterator
+ *
+ * Return: the resulting square root
  */
-int muss_in_house(int n, int s)
+int ntr_sqrt_recursion(int n, int i)
 {
-	if (s * s == n)
-	{
-		return (s);
-	}
-	else if (s * s > n)
-	{
+	if (i * i > n)
 		return (-1);
-	}
-	else
-	{
-		return (muss_in_house(n, s + 1));
-	}
+	if (i * i == n)
+		return (i);
+	return (ntr_sqrt_recursion(n, i + 1));
 }
